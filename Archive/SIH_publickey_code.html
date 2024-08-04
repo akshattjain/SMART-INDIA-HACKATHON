@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mapbox Example</title>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet" />
+    <style>
+        /* Set the map container size */
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script>
+        // Replace 'YOUR_PUBLIC_ACCESS_TOKEN' with your actual Mapbox public access token
+        mapboxgl.accessToken = 'pk.eyJ1Ijoic3JpcmFtY2hpbm1heSIsImEiOiJjbG11ZWVhajYwaDN0MmtvY3phNThhcmFkIn0.qMUf1E7BZKxYHmZ14yoMNA';
+
+        var map = new mapboxgl.Map({
+            container: 'map', // Specify the container ID
+            style: 'mapbox://styles/mapbox/streets-v11', // Use a Mapbox style
+            center: [-74.006, 40.7128], // Center the map on a specific location (longitude, latitude)
+            zoom: 10 // Set the initial zoom level
+        });
+    </script>
+</body>
+</html>

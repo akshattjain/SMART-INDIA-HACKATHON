@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jal Mitra</title>
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="shortcut icon" href="./Images/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&family=Roboto+Condensed:ital@1&display=swap" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet" />
+</head>
+<body>
+    
+    <header>
+        <!-- Navbar Section -->
+        <nav class="navbar">
+            <div class="navbar__container">
+                <a href="#home" id="navbar__logo"><img src="../static/Images/Jal Mitra Logo0.png" alt="Jal Mitra Logo" height="50px" width="50px" title="Image of Jal Mitra Logo"></a>
+                <div class="navbar__toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="navbar__menu">
+                    <li class="navbar__item">
+                        <a href="#home" class="navbar__links" id="home-page">Home</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="#about" class="navbar__links" id="about-page">About</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="#try" class="navbar__links" id="try-page">Try now</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+
+
+
+    <main>
+        <div class="hero" id="home">
+            <div class="hero__container">
+                <h1 class="hero__heading">Jal <span>Mitra</span></h1>
+                <p class="hero__description">Navigating a liquid landscape</p>
+            </div>
+        </div>
+        
+
+
+        <div class="main" id="about">
+            <div class="main__container">
+                <div class="main__img--container">
+                    <div class="main__img--card"><img src="../static/Images/Jal Mitra Logo0.png" alt="Logo of Jal Mitra" height="500px" width="500px"></div>
+                </div>
+                <div class="main__content">
+                    <h2 id="main__content__heading">What do we do?</h2>
+                    <p id="main__content__para">We are developing an AI that can detect the availability of water level beneath the ground and provide essential information about digging at that specific location. This innovative system will not only inform us about the water's presence or absence but also suggest the most suitable digging methods and the necessary tools required for the task.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="main__maps" id="try">
+            <h2 id="main__maps__heading">Try Out</h2>
+            <div class="main__maps__container">
+
+                <div class="main__maps--choice">
+                    <!-- For the drop down menu  -->
+                    <div class="search-container">
+                        <h2 id="search-container-heading">Let the magic being...</h2>
+                        <br>
+                        <input id="search-input" class="search-input" type="text" placeholder="Search for a location">
+                        <div id="search-results" class="search-results"></div>
+                    </div>
+                </div>
+
+                <div class="main__maps--map">
+                    <div id="map"></div>
+                    <div id="map__values">
+                        <p>Latitude: <span id="latitude"></span></p>
+                        <p>Longitude: <span id="longitude"></span></p>
+                        <p>Location: <span id="location"></span></p>
+                    </div>
+                </div>
+                
+                <form action='/predict' id="location-form" method="POST">
+                    <label for="latitude-input">Latitude</label>
+                    <input type="text" id="latitude-input" name="LAT" value>
+                    <br>
+                    <label for="longitude-input">Longitude</label>
+                    <input type="text" id="longitude-input" name="LONG">
+                    <br>
+                    <label for="location-input">Location</label>
+                    <input type="text" id="location-input" name="LOC">
+                    <br>
+                    <button type="submit" value="">Submit</button>
+                </form>
+
+                <div class="values__returned">
+                    
+
+                </div>
+            </div>            
+        </div>
+    </main>
+
+
+
+    <footer>
+        <p>&copy; 2023 Jal Mitra</p>
+        <br>
+        <button id="goToTop"><a href="/" id="top_top">Go to Top</a></button>
+    </footer>
+
+    <script src="../static/js/app.js"></script>
+</body>
+</html>
